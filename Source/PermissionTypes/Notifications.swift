@@ -36,8 +36,9 @@ internal extension Permission {
         guard case .notifications(let settings) = type else { fatalError() }
         
         NotificationCenter.default.addObserver(self, selector: #selector(requestingNotifications), name: .UIApplicationWillResignActive)
-        
+        #if MainApp
         UIApplication.shared.registerUserNotificationSettings(settings)
+        #endif
     }
     
     @objc func requestingNotifications() {
