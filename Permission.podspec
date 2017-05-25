@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Permission"
-  s.version      = "2.0.4"
+  s.version      = "2.0.5"
   s.license      = { :type => "MIT" }
   s.homepage     = "https://github.com/delba/Permission"
   s.author       = { "Damien" => "damien@delba.io" }
@@ -14,14 +14,14 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.default_subspec = 'Core'
-  s.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS" => "$(inherited)" }
+
   s.subspec 'Core' do |co|
     co.source_files = "Source/**/*.{swift, h}"
   end
 
   s.subspec 'AddressBook' do |ab|
     ab.dependency 'Permission/Core'
-    ab.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_ADDRESS_BOOK" }
+    ab.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_ADDRESS_BOOK" }
   end
 
   s.subspec 'Bluetooth' do |bl|
@@ -31,61 +31,61 @@ Pod::Spec.new do |s|
 
   s.subspec 'Camera' do |cm|
     cm.dependency 'Permission/Core'
-    cm.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_CAMERA" }
+    cm.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_CAMERA" }
   end
 
   s.subspec 'Contacts' do |cn|
     cn.dependency 'Permission/Core'
-    cn.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_CONTACTS" }
+    cn.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_CONTACTS" }
   end
 
   s.subspec 'Events' do |ev|
     ev.dependency 'Permission/Core'
-    ev.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_EVENTS" }
+    ev.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_EVENTS" }
   end
 
   s.subspec 'Location' do |lo|
     lo.dependency 'Permission/Core'
-    lo.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_LOCATION" }
+    lo.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_LOCATION" }
   end
 
   s.subspec 'Microphone' do |mi|
     mi.dependency 'Permission/Core'
-    mi.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_MICROPHONE" }
+    mi.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_MICROPHONE" }
   end
 
   s.subspec 'Motion' do |mo|
     mo.dependency 'Permission/Core'
-    mo.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_MOTION" }
+    mo.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_MOTION" }
   end
 
   s.subspec 'Notifications' do |no|
     no.dependency 'Permission/Core'
-    no.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_NOTIFICATIONS" }
+    no.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_NOTIFICATIONS" }
   end
 
   s.subspec 'Photos' do |ph|
     ph.dependency 'Permission/Core'
-    ph.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_PHOTOS" }
+    ph.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_PHOTOS" }
   end
 
   s.subspec 'Reminders' do |re|
     re.dependency 'Permission/Core'
-    re.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_REMINDERS" }
+    re.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_REMINDERS" }
   end
 
   s.subspec 'SpeechRecognizer' do |rs|
     rs.dependency 'Permission/Core'
-    rs.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_SPEECH_RECOGNIZER" }
+    rs.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_SPEECH_RECOGNIZER" }
   end
 
   s.subspec 'MediaLibrary' do |ml|
     ml.dependency 'Permission/Core'
-    ml.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_MEDIA_LIBRARY" }
+    ml.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_MEDIA_LIBRARY" }
   end
 
   s.subspec 'Siri' do |ab|
     ab.dependency 'Permission/Core'
-    ab.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "PERMISSION_SIRI" }
+    ab.pod_target_xcconfig = { "OTHER_SWIFT_FLAGS"  => "-DPERMISSION_SIRI" }
   end
 end
